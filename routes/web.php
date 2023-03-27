@@ -17,6 +17,8 @@ Route::redirect('/', 'login');
 
 Route::group(['middleware' => 'auth'], function() {
     Route::resource('posts', \App\Http\Controllers\PostController::class);
+    Route::resource('companies', \App\Http\Controllers\CompanyController::class);
+    Route::resource('members', \App\Http\Controllers\MemberController::class);
     Route::inertia('pages/about', 'About')->name('pages.about');
 });
 
